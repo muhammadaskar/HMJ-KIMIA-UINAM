@@ -1,0 +1,26 @@
+@extends('layouts.admin')
+
+@section('title', 'Admin | Akun')
+
+@section('section')
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Akun</h1>
+
+    @if(session()->has('message'))
+    <div class="flash-data" data-flashdata="{{ session('message') }}"></div>
+    {{-- @elseif(session()->has('failed'))
+    <div class="flash-data-failed" data-flashdata="{{ session('failed') }}">
+</div> --}}
+@endif
+
+<div class="float-right">
+    <a class="btn btn-primary" href=""><i class="fas fa-plus"></i> Tambahkan Akun</a>
+</div>
+
+
+{{-- <livewire:admin-pengurus-index /> --}}
+
+</div>
+@endsection
