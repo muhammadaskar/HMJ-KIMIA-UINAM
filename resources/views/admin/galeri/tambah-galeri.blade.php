@@ -30,6 +30,22 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
+                        <label for="exampleInputEmail1" class="form-label">Kategori</label>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group mb-3">
+                            <select name="kategori" class="form-control"">
+                                <option selected></option>
+                                <option value=" seminar">Seminar</option>
+                                <option value="hari-besar-islami">Hari Besar Islami</option>
+                                <option value="lomba">Lomba</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
                         <label for="exampleInputEmail1" class="form-label">Gambar</label>
                     </div>
                     <div class="col-md-8">

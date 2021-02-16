@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+// Semacam anu kak kegiatan" besar Himpunan spt dokumentasi seminar, hari" besar islami, dokumentasi acara lomba kegiatan dari divisi lain😁
+
 class CreateGalerisTable extends Migration
 {
     /**
@@ -17,6 +19,7 @@ class CreateGalerisTable extends Migration
             $table->id();
             $table->string('judul');
             $table->string('slug');
+            $table->string('kategori');
             $table->string('gambar');
             $table->timestamps();
         });

@@ -258,6 +258,7 @@ class AdminController extends Controller
         $judul = $request->input('judul');
         $galeri->judul = $judul;
         $galeri->slug = \Illuminate\Support\Str::slug($judul, '-');
+        $galeri->kategori = $request->kategori;
 
         if ($request->hasFile('gambar')) {
             // tambahkan isVlid method
