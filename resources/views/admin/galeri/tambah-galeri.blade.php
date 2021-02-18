@@ -38,7 +38,7 @@
                                 <option selected></option>
                                 <option value=" seminar">Seminar</option>
                                 <option value="hari-besar-islami">Hari Besar Islami</option>
-                                <option value="lomba">Lomba</option>
+                                <option value="alkali-contest">Alkali Contest</option>
                                 <option value="lainnya">Lainnya</option>
                             </select>
                         </div>
@@ -52,7 +52,7 @@
                         <div class="mb-3">
                             <input name="gambar" type="file">
                         </div>
-                        <button type="submit" class="btn btn-success mx-auto d-block mb-3">Simpan</button>
+                        <button type="submit" class="btn btn-success mx-auto d-block mb-3" id="btn-one">Simpan</button>
                     </div>
                 </div>
             </form>

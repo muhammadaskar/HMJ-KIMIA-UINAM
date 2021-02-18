@@ -30,7 +30,7 @@
                 <div class="card-body">
                     {{-- <p class="card-text"><i class="far fa-calendar-alt"></i> <?= $galeri->created_at->isoFormat('dddd, D MMMM Y'); ?> </p> --}}
                     {{-- <a href="{{ url("admin/galeri/hapus/$galeri->id") }}" class="badge badge-danger">hapus</a> --}}
-                    <button wire:click="hapusFoto({{ $galeri->id }})" class="badge badge-danger text-white border border-light" onclick="return conform('Apakah anda yakin?')">hapus</button>
+                    <button wire:click="hapusFoto({{ $galeri->id }})" class="badge badge-danger text-white border border-light" onclick="return confirm('Apakah anda yakin?')">hapus</button>
                 </div>
             </div>
         </div>

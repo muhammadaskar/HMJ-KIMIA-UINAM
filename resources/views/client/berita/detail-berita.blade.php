@@ -60,13 +60,14 @@
 
                     <div class="sidebar">
 
-                        <h3 class="sidebar-title">Cari</h3>
+                        {{-- <h3 class="sidebar-title">Cari</h3>
                         <div class="sidebar-item search-form">
                             <form action="">
                                 <input type="text">
                                 <button type="submit"><i class="bi bi-search"></i></button>
                             </form>
-                        </div><!-- End sidebar search formn-->
+                        </div> --}}
+                        <!-- End sidebar search formn-->
 
 
                         <h3 class="sidebar-title">Berita Terbaru</h3>

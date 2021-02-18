@@ -51,7 +51,7 @@
                         <div class="mb-3">
                             <input name="gambar" type="file">
                         </div>
-                        <button type="submit" class="btn btn-success mx-auto d-block mb-3">Simpan</button>
+                        <button type="submit" class="btn btn-success mx-auto d-block mb-3" id="btn-one">Simpan</button>
                     </div>
                 </div>
             </form>

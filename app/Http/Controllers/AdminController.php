@@ -6,9 +6,12 @@ use App\Berita;
 use App\Blog;
 use App\Galeri;
 use App\Pengurus;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Hash;
+use Laravel\Ui\Presets\React;
 
 class AdminController extends Controller
 {
@@ -404,5 +407,108 @@ class AdminController extends Controller
         $data['page'] = 'akun';
 
         return view('admin.akun.index', $data);
+    }
+
+    public function tambahAkunAdmin()
+    {
+        $data['page'] = 'akun';
+
+        return view('admin.akun.tambah-akun', $data);
+    }
+
+    public function postTambahAkunAdmin(Request $request)
+    {
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:8|confirmed'
+        ]);
+
+        $password = $request->password;
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($password)
+        ]);
+
+        $user->assignRole('admin');
+
+        return redirect()->route('admin-akun')->with('message', 'akun berhasil ditambahkan');
+    }
+
+    public function akunSaya()
+    {
+        $data['page'] = 'akun-saya';
+
+        return view('admin.akun.info-akun', $data);
+    }
+
+    public function ubahProfil()
+    {
+        $data['page'] = 'akun-saya';
+
+        return view('admin.akun.ubah-profil', $data);
+    }
+
+    public function postUbahProfil(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|min:5'
+        ]);
+
+        DB::table('users')
+            ->where('id', auth()->user()->id)
+            ->update(['name' => $request->name]);
+        return redirect()->route('akun-saya')->with('message', 'berhasil diubah');
+    }
+
+    public function ubahSandi()
+    {
+        $data['page'] = 'akun-saya';
+
+        return view('admin.akun.ubah-sandi', $data);
+    }
+
+    public function postUbahSandi(Request $request)
+    {
+        $id = auth()->user()->id;
+
+        $pl = $request->input('sandiLama');
+        $pb = $request->input('password');
+        $kpb = $request->input('password_confirmation');
+
+        $request->validate([
+            'sandiLama' => 'required',
+            'password' => 'required|min:8',
+            'password_confirmation' => 'required'
+        ]);
+
+
+        if (!Hash::check($pl, auth()->user()->password)) {
+            return redirect()->route('admin-ubah-sandi')->with('failed', 'kata sandi lama tidak sesuai !');
+        } else {
+            if ($pb != $kpb) {
+                return redirect()->route('admin-ubah-sandi')->with('failed', 'kata sandi baru tidak sesuai !');
+            } else {
+                DB::table('users')->where('id', $id)
+                    ->update([
+                        'password' => Hash::make($request->input('password'))
+                    ]);
+                return redirect()->route('akun-saya')->with('message', 'kata sandi berhasil diubah...');
+            }
+        }
+    }
+
+    public function hapusAkun()
+    {
+        DB::table('users')
+            ->where('id', auth()->user()->id)
+            ->delete();
+
+        $this->middleware('role:admin')->except('logout');
+        return redirect()->guest(route('login'));
+        // return redirect()->route('keluar');
     }
 }

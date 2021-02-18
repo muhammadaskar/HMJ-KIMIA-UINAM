@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link href="{{asset("assets/img/logo/logo-hmj.png")}}" rel="icon">
+
     <title>@yield('title', 'Admin')</title>
 
     <!-- Custom fonts for this template-->
@@ -16,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
+    <link href="{{asset("assets/admin/css/style.css")}}" rel="stylesheet">
     <link href="{{asset("assets/admin/css/sb-admin-2.min.css")}}" rel="stylesheet">
 
     @livewireStyles
@@ -157,9 +160,9 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('akun-saya') }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
+                                    Informasi Akun
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -225,23 +228,26 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset("assets/admin/vendor/jquery/jquery.min.js")}}"></script>
     <script src="{{asset("assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{{asset("assets/admin/vendor/jquery-easing/jquery.easing.min.js")}}"></script>
+    {{-- <script src="{{asset("assets/admin/vendor/jquery-easing/jquery.easing.min.js")}}"></script> --}}
 
     <!-- Custom scripts for all pages-->
     <script src="{{asset("assets/admin/js/sb-admin-2.min.js")}}"></script>
 
     <!-- Page level plugins -->
-    <script src="{{asset("assets/admin/vendor/chart.js/Chart.min.js")}}"></script>
+    {{-- <script src="{{asset("assets/admin/vendor/chart.js/Chart.min.js")}}"></script> --}}
 
     <!-- Page level custom scripts -->
     <script src="{{asset("assets/admin/js/demo/chart-area-demo.js")}}"></script>
     <script src="{{asset("assets/admin/js/demo/chart-pie-demo.js")}}"></script>
     <script src="{{asset("assets/admin/js/option.js")}}"></script>
+    <script src="{{asset("assets/admin/js/main.js")}}"></script>
 
     <script src="{{asset("assets/js/sweetalert2.all.min.js")}}"></script>
     <script src="{{asset("assets/js/alert.js")}}"></script>
@@ -255,7 +261,6 @@
         CKEDITOR.config.allowedContent = true;
 
     </script>
-
     @livewireScripts
 
 </body>

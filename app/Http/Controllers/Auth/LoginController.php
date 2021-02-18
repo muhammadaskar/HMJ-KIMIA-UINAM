@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -45,5 +46,17 @@ class LoginController extends Controller
             return redirect()->route('admin');
         }
         return redirect()->route('home');
+    }
+
+    public function logout(Request $request)
+    {
+
+        $this->middleware('role:admin')->except('logout');
+
+        $request->session()->flush();
+
+        $request->session()->regenerate();
+
+        return redirect()->guest(route('login'));
     }
 }

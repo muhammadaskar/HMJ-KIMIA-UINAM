@@ -38,20 +38,6 @@
 
                         </div>
 
-                        {{-- <div class="entry-footer">
-                            <i class="bi bi-folder"></i>
-                            <ul class="cats">
-                                <li><a href="#">Business</a></li>
-                            </ul>
-
-                            <i class="bi bi-tags"></i>
-                            <ul class="tags">
-                                <li><a href="#">Creative</a></li>
-                                <li><a href="#">Tips</a></li>
-                                <li><a href="#">Marketing</a></li>
-                            </ul>
-                        </div> --}}
-
                     </article><!-- End blog entry -->
 
                 </div><!-- End blog entries list -->
@@ -60,13 +46,14 @@
 
                     <div class="sidebar">
 
-                        <h3 class="sidebar-title">Cari</h3>
+                        {{-- <h3 class="sidebar-title">Cari</h3>
                         <div class="sidebar-item search-form">
                             <form action="">
                                 <input type="text">
                                 <button type="submit"><i class="bi bi-search"></i></button>
                             </form>
-                        </div><!-- End sidebar search formn-->
+                        </div> --}}
+                        <!-- End sidebar search formn-->
 
 
                         <h3 class="sidebar-title">Blog Terbaru</h3>

@@ -20,7 +20,7 @@
                     <li data-filter="*" class="filter-active">Semua</li>
                     <li data-filter=".seminar">Seminar</li>
                     <li data-filter=".hari-besar-islami">Hari Besar Islami</li>
-                    <li data-filter=".lomba">Lomba</li>
+                    <li data-filter=".alkali-contest">Alkali Contest</li>
                     <li data-filter=".lainnya">Lainnya</li>
                 </ul>
             </div>
@@ -60,8 +60,8 @@
                     </div>
                 </div>
             </div>
-            @elseif($galeri->kategori == 'lomba')
-            <div class="col-lg-4 col-md-6 portfolio-item lomba">
+            @elseif($galeri->kategori == 'alkali-contest')
+            <div class="col-lg-4 col-md-6 portfolio-item alkali-contest">
                 <div class="portfolio-wrap">
                     <div class="img-galeri">
                         <img src="{{asset("assets/img/galeri/$galeri->gambar")}}" class="img-fluid" alt="">

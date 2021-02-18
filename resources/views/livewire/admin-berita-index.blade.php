@@ -14,7 +14,7 @@
                     <p class="card-text"><i class="far fa-calendar-alt"></i> <?= $berita->created_at->isoFormat('dddd, D MMMM Y'); ?> </p>
                     <a href="{{ url("admin/berita/$berita->slug") }}" class="badge badge-secondary">detail</a>
                     <a href="{{ url("admin/berita/edit/$berita->id") }}" class="badge badge-success">edit</a>
-                    <a href="{{ url("admin/berita/hapus/$berita->id") }}" class="badge badge-danger">hapus</a>
+                    <a href="{{ url("admin/berita/hapus/$berita->id") }}" class="badge badge-danger" id="btn-two" onclick="return confirm('Apakah anda yakin?')">hapus</a>
                 </div>
             </div>
         </div>
@@ -29,5 +29,9 @@
     </div>
     <div class="mx-auto d-block">
         {{ $beritas->links() }}
+    </div>
+
+    <div class="mx-auto d-block" id="two">
+
     </div>
 </div>

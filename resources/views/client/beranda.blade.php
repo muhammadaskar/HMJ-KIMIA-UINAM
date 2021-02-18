@@ -105,7 +105,7 @@
     <section id="recent-blog-posts" class="values recent-blog-posts">
 
         <div class="container" data-aos="fade-up">
-
+            @if(!$beritas->isEmpty())
             <header class="section-header">
                 <h1 class="text-white">Berita Terbaru</h1>
                 <hr class="bg-white mx-auto" style="width:270px; height:10px; border-radius: 7px 7px 7px 7px;">
@@ -125,6 +125,8 @@
                 @endforeach
 
             </div>
+
+            @endif
 
         </div>
 

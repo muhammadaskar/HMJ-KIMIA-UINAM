@@ -14,7 +14,7 @@
                     <p class="card-text"><i class="far fa-calendar-alt"></i> <?= $blog->created_at->isoFormat('dddd, D MMMM Y'); ?> </p>
                     <a href="{{ url("admin/blog/$blog->slug") }}" class="badge badge-secondary">detail</a>
                     <a href="{{ url("admin/blog/edit/$blog->id") }}" class="badge badge-success">edit</a>
-                    <a href="{{ url("admin/blog/hapus/$blog->id") }}" class="badge badge-danger">hapus</a>
+                    <a href="{{ url("admin/blog/hapus/$blog->id") }}" class="badge badge-danger" id="btn-two" onclick="return confirm('Apakah anda yakin ?')">hapus</a>
                 </div>
             </div>
         </div>

@@ -87,6 +87,16 @@ Route::group(['middleware' => 'role:admin'], function () {
 
     // AKUN
     Route::get('/admin-akun', 'AdminController@akunAdmin')->name('admin-akun');
+    Route::get('/admin-tambah-akun', 'AdminController@tambahAkunAdmin')->name('admin-tambah-akun');
+    Route::post('/admin-tambah-akun', 'AdminController@postTambahAkunAdmin')->name('post-tambah-akun-admin');
+
+    Route::get('/admin-akun-saya', 'AdminController@akunSaya')->name('akun-saya');
+    Route::get('/admin-ubah-profil', 'AdminController@ubahProfil')->name('admin-ubah-profil');
+    Route::put('/admin-ubah-profil', 'AdminController@postUbahProfil')->name('post-ubah-profil-admin');
+    Route::get('/admin-ubah-sandi', 'AdminController@ubahSandi')->name('admin-ubah-sandi');
+    Route::put('/admin-ubah-sandi', 'AdminController@postUbahSandi')->name('post-ubah-sandi-admin');
+    Route::get('/admin-hapus-akun', 'AdminController@hapusAkun')->name('hapus-akun-admin');
     // END AKUN
 
+    Route::get('/keluar', 'AdminController@keluar')->name('keluar');
 });

@@ -15,12 +15,10 @@
 </div> --}}
 @endif
 
-<div class="float-right">
-    <a class="btn btn-primary" href=""><i class="fas fa-plus"></i> Tambahkan Akun</a>
-</div>
 
 
-{{-- <livewire:admin-pengurus-index /> --}}
+
+<livewire:admin-akun-index />
 
 </div>
 @endsection

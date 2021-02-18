@@ -27,7 +27,7 @@
     @endif
 
     <div class="float-right">
-        <a class="btn btn-primary" href=" {{ route('tambah-berita') }} "><i class="fas fa-plus"></i> Tambahkan Berita</a>
+        <a class="btn btn-primary" href=" {{ route('tambah-berita') }} "></i> Tambahkan Berita</a>
     </div>
 
 
