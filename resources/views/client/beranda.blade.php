@@ -12,7 +12,6 @@
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center">
                 <h1 data-aos="fade-up" class="pl-3">HMJ-KIMIA FST UIN ALAUDDIN MAKASSAR</h1>
-                {{-- <h3 data-aos="fade-up" class="text-justify">HMJ-KIMIA FST UIN ALAUDDIN MAKASSAR adalah Organisasi yang menghimpun Mahasiswa Jurusan Kimia Fakultas Sains dan Teknologi Universitas Islam Negeri Alauddin Makassar.</h3> --}}
             </div>
             <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
                 <img src="assets/img/kimia.svg" class="img-fluid" alt="">
