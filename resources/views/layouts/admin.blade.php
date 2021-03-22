@@ -113,6 +113,12 @@
                     <span>Galeri</span></a>
             </li>
 
+            <li class="nav-item @if($page == 'kritik-saran') active @endif">
+                <a class="nav-link" href="{{ route('admin-kritik-saran') }}">
+                    <i class="fas fa-fw fa-scroll"></i>
+                    <span>Kritik dan Saran</span></a>
+            </li>
+
             <!-- Nav Item - Charts -->
             <li class="nav-item @if($page == 'akun') active @endif">
                 <a class="nav-link" href="{{ route('admin-akun') }}">

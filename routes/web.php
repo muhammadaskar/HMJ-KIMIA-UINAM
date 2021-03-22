@@ -31,6 +31,7 @@ Route::get('/pengurus/{slug}', 'MainController@getPengurus')->name('pengurus');
 
 Route::get('/tentang', 'MainController@tentang')->name('tentang');
 Route::get('/kontak', 'MainController@kontak')->name('kontak');
+Route::post('/kontak', 'MainController@kritikSaran')->name('kritik-saran.post');
 
 
 // Auth::routes();
@@ -97,6 +98,10 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::put('/admin-ubah-sandi', 'AdminController@postUbahSandi')->name('post-ubah-sandi-admin');
     Route::get('/admin-hapus-akun', 'AdminController@hapusAkun')->name('hapus-akun-admin');
     // END AKUN
+
+    // KRITIK DAN SARAN
+    Route::get('admin-kritik-saran', 'AdminController@kritikSaran')->name('admin-kritik-saran');
+    // END KRITIK DAN SARAN
 
     Route::get('/keluar', 'AdminController@keluar')->name('keluar');
 });

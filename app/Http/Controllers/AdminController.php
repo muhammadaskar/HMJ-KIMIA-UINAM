@@ -511,4 +511,10 @@ class AdminController extends Controller
         return redirect()->guest(route('login'));
         // return redirect()->route('keluar');
     }
+
+    public function kritikSaran()
+    {
+        $data['page'] = 'kritik-saran';
+        return view('admin.kritik-saran.index', $data);
+    }
 }

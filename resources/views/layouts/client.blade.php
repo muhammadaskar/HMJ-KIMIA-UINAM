@@ -12,6 +12,11 @@
 
     <meta content="" name="keywords">
 
+    
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+
     <!-- Favicons -->
     <link href="{{asset("assets/img/logo/logo-hmj.png")}}" rel="icon">
     <link href="{{asset("assets/img/apple-touch-icon.png")}}" rel="apple-touch-icon">
@@ -160,6 +165,7 @@
     </footer><!-- End Footer -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    @yield('script')
 
     <!-- Vendor JS Files -->
     <script src="{{asset("assets/vendor/bootstrap/js/bootstrap.bundle.js")}}"></script>
@@ -169,6 +175,8 @@
     <script src="{{asset("assets/vendor/purecounter/purecounter.js")}}"></script>
     <script src="{{asset("assets/vendor/isotope-layout/isotope.pkgd.min.js")}}"></script>
     <script src="{{asset("assets/vendor/glightbox/js/glightbox.min.js")}}"></script>
+
+    <script src="{{asset("assets/js/sweetalert2.all.min.js")}}"></script>
 
     <!-- Template Main JS File -->
     <script src="{{asset("assets/js/main.js")}}"></script>

@@ -74,8 +74,74 @@
 
         </div>
 
+        <div  class="row mt-3">
+        <div  class="col-md-8">
+        <h2 class="text-center">Kritik dan Saran</h2>
+        
+        <form action="javascript:void(0)">
+        {{-- @csrf --}}
+            <div class="form-group">
+                {{-- <label for="exampleFormControlTextarea1">Kritik dan Saran</label> --}}
+                <textarea id="kritik" name="kritik_saran" placeholder="silahkan masukkan kritik dan saran anda" class="form-control" id="exampleFormControlTextarea1" rows="4" required></textarea>
+                @if (session()->has('gagal'))
+                    <div class="row mt-1">
+                        <div class="col-md-6">
+                            <div class="alert alert-danger">
+                            {{ session('gagal') }}
+                            </div>
+                        </div>
+                    </div>
+                @endif
+                <button class="btn btn-primary mt-2 mx-auto d-block btn-submit" type="submit">Kirim</button>
+            </div>
+        </form>
+        </div>
+
     </div>
 
 </section>
 <!-- End Contact Section -->
+
+@endsection
+
+@section('script')
+<script type="text/javascript">
+ $.ajaxSetup({
+         headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+    });
+
+    $(".btn-submit").click(function(e){
+  
+        e.preventDefault();
+   
+        var kritik = $("textarea[name=kritik_saran]").val();
+   
+        $.ajax({
+           type:'POST',
+           url:"{{ route('kritik-saran.post') }}",
+           data:{kritik_saran: kritik},
+           success:function(data, res){
+                $('#kritik').val('');
+                if (data.success){
+                Swal.fire({
+                    title: 'Berhasil',
+                    text: data.success,
+                    type: 'success',
+                    icon: 'success'
+                })
+                } else {
+                    Swal.fire({
+                    title: 'Gagal',
+                    text: data.gagal,
+                    icon: 'error'
+                })
+                }
+           },
+        })
+  
+    });
+
+</script>
 @endsection

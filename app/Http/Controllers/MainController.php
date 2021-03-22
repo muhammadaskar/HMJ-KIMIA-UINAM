@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Berita;
 use App\Blog;
 use App\Galeri;
+use App\KritikSaran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class MainController extends Controller
 {
@@ -75,5 +77,21 @@ class MainController extends Controller
     {
         $data['page'] = 'kontak';
         return view('client.kontak.index', $data);
+    }
+
+    public function kritikSaran(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'kritik_saran' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            // return redirect()->route('kontak')->with('gagal', 'kritik dan saran wajib diisi !');
+            return response()->json(['gagal' => 'kritik dan saran wajib diisi !']);
+        } else {
+            KritikSaran::create($request->all());
+            // return redirect()->route('kontak')->with('success', 'Kritik dan Saran anda berhasil dikirim');
+            return response()->json(['success' => 'Kritik dan Saran anda berhasil dikirim']);
+        }
     }
 }
