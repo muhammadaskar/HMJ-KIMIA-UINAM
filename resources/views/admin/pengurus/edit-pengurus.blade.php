@@ -11,7 +11,11 @@
 
     <div class="row mt-3">
         <div class="col-md-10">
+            @if ($tahun == '2021')
             <img src="{{ asset("assets/img/pengurus/$pengurus->foto") }}" class="img-fluid mx-auto d-block mb-2" style="max-width:20%;">
+            @else
+            <img src="{{ asset("assets/img/pengurus/$tahun/$pengurus->foto") }}" class="img-fluid mx-auto d-block mb-2" style="max-width:20%;">
+            @endif
             <form method="post" action="{{ url("admin/pengurus/edit/$pengurus->id") }}" enctype="multipart/form-data">
                 @method('put')
                 @csrf
@@ -79,6 +83,9 @@
                     </div>
                     <div class="col-md-8">
                         <div class="mb-3">
+                            @if($tahun != '2021')
+                                <input  name="tahun" type="hidden" class="form-control" value="{{ $tahun }}">
+                            @endif
                             <input name="gambar" type="file">
                         </div>
                         <button type="submit" class="btn btn-success mx-auto d-block mb-3" id="btn-one">Simpan</button>

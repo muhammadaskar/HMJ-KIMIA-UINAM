@@ -26,13 +26,19 @@ Route::get('/blog/{slug}', 'MainController@detailBlog');
 
 
 Route::get('/galeri', 'MainController@galeri')->name('galeri');
+Route::get('/mahasiswa', 'MainController@mahasiswa')->name('mahasiswa');
+Route::get('/mahasiswa/tambah-data', 'MainController@tambahDataMahasiswa')->name('tambah-data-mahasiswa');
+Route::post('/mahasiswa/tambah-data', 'MainController@postTambahDataMahasiswa')->name('post-tambah-mahasiswa');
 // Route::get('/pengurus/{pengurus}', 'MainController@getPengurus')->name('pengurus');
-Route::get('/pengurus/{slug}', 'MainController@getPengurus')->name('pengurus');
+Route::get('/pengurus/{tahun}/{slug}', 'MainController@getPengurus')->name('pengurus');
 
 Route::get('/tentang', 'MainController@tentang')->name('tentang');
 Route::get('/kontak', 'MainController@kontak')->name('kontak');
 Route::post('/kontak', 'MainController@kritikSaran')->name('kritik-saran.post');
 
+// Route::get('/test', function () {
+//     dd(date("Y/m"));
+// });
 
 // Auth::routes();
 // Auth::routes(['register' => false]);
@@ -77,13 +83,13 @@ Route::group(['middleware' => 'role:admin'], function () {
     // END GALERI
 
     // PENGURUS
-    Route::get('/admin/pengurus', 'AdminController@pengurus')->name('admin-pengurus');
-    Route::get('/admin/tambah-pengurus', 'AdminController@tambahPengurus')->name('tambah-pengurus');
+    Route::get('/admin/pengurus/{tahun}', 'AdminController@pengurus')->name('admin-pengurus');
+    Route::get('/admin/tambah-pengurus/{tahunPeriode}', 'AdminController@tambahPengurus')->name('tambah-pengurus');
     Route::post('/admin/tambah-pengurus', 'AdminController@postTambahPengurus')->name('post-tambah-pengurus');
-    Route::get('/admin/pengurus/edit/{id}', 'AdminController@editPengurus');
+    Route::get('/admin/pengurus/edit/{tahunPeriode}/{id}', 'AdminController@editPengurus');
     Route::put('/admin/pengurus/edit/{pengurus}', 'AdminController@postEditPengurus');
-    Route::get('/admin/pengurus/hapus/{id}', 'AdminController@hapusPengurus');
-    Route::get('/admin/pengurus/hapus-pengurus', 'AdminController@hapusDataPengurus')->name('hapus-pengurus');
+    Route::get('/admin/pengurus/hapus/{tahunPeriode}/{id}', 'AdminController@hapusPengurus');
+    Route::get('/admin/pengurus/{tahunPeriode}/hapus-pengurus', 'AdminController@hapusDataPengurus')->name('hapus-pengurus');
     // END PENGURUS
 
     // AKUN
@@ -102,6 +108,17 @@ Route::group(['middleware' => 'role:admin'], function () {
     // KRITIK DAN SARAN
     Route::get('admin-kritik-saran', 'AdminController@kritikSaran')->name('admin-kritik-saran');
     // END KRITIK DAN SARAN
+
+    //MAHASISWA
+    Route::get('admin-mahasiswa', 'AdminController@mahasiswa')->name('admin-mahasiswa');
+    Route::get('admin/mahasiswa/aktifkan/{id}', 'AdminController@aktifkanAkunMahasiswa');
+    Route::get('admin/mahasiswa/non-aktifkan/{id}', 'AdminController@nonAktifkanAkunMahasiswa');
+    Route::get('admin/tambah-mahasiswa', 'AdminController@tambahMahasiswa')->name('admin-tambah-mahasiswa');
+    Route::post('admin/tambah-mahasiswa', 'AdminController@postTambahMahasiswa')->name('post-admin-tambah-mahasiswa');
+    Route::get('admin/mahasiswa/hapus/{id}', 'AdminController@hapusMahasiswaById');
+    Route::get('admin/mahasiswa/edit/{id}', 'AdminController@editMahasiswaById');
+    Route::put('/admin/mahasiswa/edit/{mahasiswa}', 'AdminController@postEditEditMahasiswaById');
+    // END MAHASISWA
 
     Route::get('/keluar', 'AdminController@keluar')->name('keluar');
 });

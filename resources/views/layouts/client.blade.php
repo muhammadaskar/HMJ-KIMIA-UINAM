@@ -64,21 +64,46 @@
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto @if($page == 'galeri') active @endif" href=" {{ route('galeri') }} ">Galeri</a></li>
+                    <li><a class="nav-link scrollto @if($page == 'mahasiswa') active @endif" href=" {{ route('mahasiswa') }} ">Mahasiswa</a></li>
                     {{-- <li><a class="nav-link scrollto" href="#about">About</a></li> --}}
                     {{-- <li><a class="nav-link scrollto" href="#services">Services</a></li> --}}
                     {{-- <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li> --}}
                     {{-- <li><a class="nav-link scrollto" href="#team">Team</a></li> --}}
                     {{-- <li><a href="blog.html">Blog</a></li> --}}
+
                     <li class="dropdown"><a href="#"><span>Pengurus</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href=" {{ url('pengurus/pengurus-harian') }} ">Pengurus Harian</a></li>
-                            <li><a href="{{url("pengurus/keorganisasian-dan-pengkaderan")}}">Keorganisasian</a></li>
-                            <li><a href="{{url("pengurus/keilmuan")}}">Keilmuan</a></li>
-                            <li><a href="{{url("pengurus/kerohanian")}}">Kerohanian</a></li>
-                            <li><a href="{{url("pengurus/informasi-dan-komunikasi")}}">Informasi dan Komunikasi</a></li>
-                            <li><a href="{{url("pengurus/dana-dan-usaha")}}">Dana dan Usaha</a></li>
-                            <li><a href="{{url("pengurus/minat-dan-bakat")}}">Minat dan Bakat</a></li>
-                        </ul>
+                    <ul>
+                        {{-- <li class="dropdown"><a href="#"><span>Pengurus 2021</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href=" {{ url('pengurus/2021/pengurus-harian') }} ">Pengurus Harian</a></li>
+                                <li><a href="{{url("pengurus/2021/keorganisasian-dan-pengkaderan")}}">Keorganisasian</a></li>
+                                <li><a href="{{url("pengurus/2021/keilmuan")}}">Keilmuan</a></li>
+                                <li><a href="{{url("pengurus/2021/kerohanian")}}">Kerohanian</a></li>
+                                <li><a href="{{url("pengurus/2021/informasi-dan-komunikasi")}}">Informasi dan Komunikasi</a></li>
+                                <li><a href="{{url("pengurus/2021/dana-dan-usaha")}}">Dana dan Usaha</a></li>
+                                <li><a href="{{url("pengurus/2021/minat-dan-bakat")}}">Minat dan Bakat</a></li>
+                            </ul>
+                        </li> --}}
+                        <?php 
+                        $tahun_periode = array('2021','2022','2023','2024','2025');
+                        $tahun_sekarang = date("Y");
+                        ?>
+                        @foreach ($tahun_periode as $tahun)
+                            @if($tahun <= $tahun_sekarang)
+                            <li class="dropdown"><a href="#"><span>Pengurus {{ $tahun }}</span> <i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href=" {{ url("pengurus/$tahun/pengurus-harian") }} ">Pengurus Harian</a></li>
+                                    <li><a href="{{url("pengurus/$tahun/keorganisasian-dan-pengkaderan")}}">Keorganisasian</a></li>
+                                    <li><a href="{{url("pengurus/$tahun/keilmuan")}}">Keilmuan</a></li>
+                                    <li><a href="{{url("pengurus/$tahun/kerohanian")}}">Kerohanian</a></li>
+                                    <li><a href="{{url("pengurus/$tahun/informasi-dan-komunikasi")}}">Informasi dan Komunikasi</a></li>
+                                    <li><a href="{{url("pengurus/$tahun/dana-dan-usaha")}}">Dana dan Usaha</a></li>
+                                    <li><a href="{{url("pengurus/$tahun/minat-dan-bakat")}}">Minat dan Bakat</a></li>
+                                </ul>
+                            </li>
+                            @endif
+                        @endforeach
+                    </ul>
                     </li>
                     <li><a class="nav-link scrollto @if($page =='tentang') active @endif" href=" {{ url('tentang') }} ">Tentang</a></li>
                     <li><a class="nav-link scrollto" href=" {{ url('kontak') }} ">Kontak</a></li>
@@ -144,7 +169,7 @@
                         <p>
                             Universitas Islam Negeri Alauddin Makassar Fakultas Sains dan Teknologi.
                             Gedung Sekretariat Jl. H.M Yasin Limpo No.36 Samata, Kabupaten Gowa.<br>
-                            <strong>Phone:</strong> 085218853854<br>
+                            <strong>Telp:</strong> +62 821-9219-8219 <br>
                             <strong>Email:</strong> hmjkimiauinam01@gmail.com<br>
                         </p>
 

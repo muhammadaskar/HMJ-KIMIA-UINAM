@@ -6,7 +6,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Tambah Data Pengurus</h1>
+    <h1 class="h3 mb-4 text-gray-800">Tambah Data Pengurus Tahun {{ $tahunPeriode }}</h1>
     <a class="btn btn-primary" href=" {{ URL::previous() }} "><i class="fas fa-arrow-left"></i> Kembali</a>
 
     <div class="row mt-3">
@@ -64,6 +64,9 @@
                     </div>
                     <div class="col-md-8">
                         <div class="mb-3">
+                            @if($tahunPeriode != '2021')
+                                <input  name="tahun" type="hidden" class="form-control" value="{{ $tahunPeriode }}">
+                            @endif
                             <input name="gambar" type="file">
                         </div>
                         <button type="submit" class="btn btn-success mx-auto d-block mb-3" id="btn-one">Simpan</button>

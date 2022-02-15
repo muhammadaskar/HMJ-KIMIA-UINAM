@@ -19,7 +19,11 @@
             <div class="card">
                 <div class="card-header">
                     <a href="{{ asset("assets/img/pengurus/$pengurus->foto") }}" target="_blank">
+                    @if($tahun == true)
+                        <img class="mx-auto d-block" src="{{ asset("assets/img/pengurus/$pengurus->tahun_periode/$pengurus->foto") }}" style="max-height:80px;  max-width: 100px;" class="card-img-top" alt="...">
+                    @else
                         <img class="mx-auto d-block" src="{{ asset("assets/img/pengurus/$pengurus->foto") }}" style="max-height:80px;  max-width: 100px;" class="card-img-top" alt="...">
+                    @endif
                     </a>
                     <h6 class="text-center">{{ $pengurus->nama }}</h6>
                     {{-- <h5 class="card-title">{{ $pengurus->judul }}</h5> --}}
@@ -28,8 +32,8 @@
                     <h5 class="text-center">{{ $pengurus->jabatan }}</h5>
                     <h4 class="text-center">{{ Str::title("$pengurus->divisi") }}</h4>
                     <div class="text-center">
-                        <a href="{{ url("admin/pengurus/edit/$pengurus->id") }}" class="badge badge-secondary align-align-items-center">edit</a>
-                        <a href="{{ url("admin/pengurus/hapus/$pengurus->id") }}" class="badge badge-danger text-white border border-light" onclick="return confirm('Apakah anda yakin?')">hapus</a>
+                        <a href="{{ url("admin/pengurus/edit/$tahunPeriode/$pengurus->id") }}" class="badge badge-secondary align-align-items-center">edit</a>
+                        <a href="{{ url("admin/pengurus/hapus/$tahunPeriode/$pengurus->id") }}" class="badge badge-danger text-white border border-light" onclick="return confirm('Apakah anda yakin?')">hapus</a>
                     </div>
                 </div>
             </div>

@@ -20,6 +20,7 @@
             </div>
         </div>
 
+        @if($tahun == true)
         {{-- KETUA UMUM ATAU KORDINATOR --}}
         @foreach ($penguruses as $pengurus)
         @if($pengurus->jabatan == 'Ketua Umum' || $pengurus->jabatan == 'Koordinator')
@@ -49,7 +50,37 @@
             @endforeach
 
         </div>
+        @else
+        {{-- KETUA UMUM ATAU KORDINATOR --}}
+        @foreach ($penguruses as $pengurus)
+        @if($pengurus->jabatan == 'Ketua Umum' || $pengurus->jabatan == 'Koordinator')
+        <div class="row mt-2 gy-4" data-aos="fade-left">
+            <div class="col-lg-3 col-md-6 mx-auto d-block" data-aos="zoom-in" data-aos-delay="100">
+                <div class="box">
+                    <h4>{{ $pengurus->nama }}</h4>
+                    <img src="{{asset("assets/img/pengurus/$tahunPeriode/$pengurus->foto")}}" class="img-fluid" alt="">
+                    <h3>{{ $pengurus->jabatan }}</h3>
+                </div>
+            </div>
+        </div>
+        @endif
+        @endforeach
 
+        <div class="row gy-4 mt-3" data-aos="fade-left">
+            @foreach ($penguruses as $pengurus)
+            @if($pengurus->jabatan != 'Ketua Umum' && $pengurus->jabatan != 'Koordinator')
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                <div class="box">
+                    <h4> {{ $pengurus->nama }} </h4>
+                    <img src="{{asset("assets/img/pengurus/$tahunPeriode/$pengurus->foto")}}" class="img-fluid" alt="">
+                    <h3>{{ $pengurus->jabatan }}</h3>
+                </div>
+            </div>
+            @endif
+            @endforeach
+
+        </div>
+        @endif
     </div>
 
 </section>

@@ -32,7 +32,7 @@
                         <div class="info-box">
                             <i class="bi bi-telephone"></i>
                             <h3>Telepon</h3>
-                            <p>085218853854</p>
+                            <p>+62 821-9219-8219 </p>
                         </div>
                     </div>
                     <div class="col-md-6">

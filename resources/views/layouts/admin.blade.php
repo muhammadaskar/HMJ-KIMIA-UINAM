@@ -82,12 +82,21 @@
             <li class="nav-item @if($page == 'pengurus') active @endif">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-users"></i>
-                    <span>Pengurus</span>
+                    <span>Data Pengurus</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         {{-- <h6 class="collapse-header">Data Pengurus:</h6> --}}
-                        <a class="collapse-item" href="{{ route('admin-pengurus') }}">Data Pengurus</a>
+                        <?php 
+                        $tahun_periode = array('2021','2022','2023','2024','2025');
+                        $tahun_sekarang = date("Y");
+                        ?>
+                        @foreach ($tahun_periode as $tahun)
+                            @if($tahun <= $tahun_sekarang)
+
+                        <a class="collapse-item" href="{{ url("admin/pengurus/$tahun") }}">Pengurus {{ $tahun }}</a>
+                            @endif
+                        @endforeach
                         {{-- <a class="collapse-item" href="#">Pengurus Harian</a>
                         <a class="collapse-item" href="#">Keorganisasian</a>
                         <a class="collapse-item" href="#">Kerohanian</a>
@@ -96,6 +105,18 @@
                         <a class="collapse-item" href="#">Minat dan Bakat</a> --}}
                     </div>
                 </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-heading">
+                Data Mahasiswa
+            </div>
+            <li class="nav-item @if($page == 'mahasiswa') active @endif">
+                <a class="nav-link" href=" {{ route('admin-mahasiswa') }} ">
+                    <i class="far fas-fw fa-newspaper"></i>
+                    <span>Data Mahasiwa</span></a>
             </li>
 
             <!-- Divider -->
