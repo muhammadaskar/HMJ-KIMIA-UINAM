@@ -614,7 +614,7 @@ class AdminController extends Controller
         }
         DB::table('mahasiswas')->where('id', $id)->delete();
         unlink(public_path("assets/img/mahasiswa/$mahasiswa->angkatan/") . $mahasiswa->foto);
-        return redirect()->route('admin-mahasiswa')->with('message', 'gagal dihapus');
+        return redirect()->route('admin-mahasiswa')->with('message', 'data mahasiswa berhasil dihapus');
     }
 
 

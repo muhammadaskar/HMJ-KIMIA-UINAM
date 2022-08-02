@@ -29,39 +29,49 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="info-box">
-                            <i class="bi bi-telephone"></i>
-                            <h3>Telepon</h3>
-                            <p>+62 821-9219-8219 </p>
-                        </div>
+                        <a href="tel://6282192198219">
+                            <div class="info-box">
+                                <i class="bi bi-telephone"></i>
+                                <h3>Telepon</h3>
+                                <p>+62 821-9219-8219 </p>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-md-6">
-                        <div class="info-box">
-                            <i class="bi bi-envelope"></i>
-                            <h3>Email</h3>
-                            <p>hmjkimiauinam01@gmail.com</p>
-                        </div>
+                        <a href="mailto:hmjkimiauinam01@gmail.com">
+                            <div class="info-box">
+                                <i class="bi bi-envelope"></i>
+                                <h3>Email</h3>
+                                <p>hmjkimiauinam01@gmail.com</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-md-4">
-                        <div class="info-box">
-                            <i class="bi bi-instagram"></i>
-                            <h3>Instagram</h3>
-                            <p>@kimia_uinam</p>
-                        </div>
+                        <a href="https://www.instagram.com/kimia_uinam/" target="_blank">
+                            <div class="info-box">
+                                <i class="bi bi-instagram"></i>
+                                <h3>Instagram</h3>
+                                <p>@kimia_uinam</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-md-4">
-                        <div class="info-box">
-                            <i class="bi bi-youtube"></i>
-                            <h3>Youtube</h3>
-                            <p>HMJ KIMIA UINAM</p>
-                        </div>
+                        <a href="https://www.youtube.com/channel/UCQ4sVeYoneaYgBx0HVjyZYw" target="_blank">
+                            <div class="info-box">
+                                <i class="bi bi-youtube"></i>
+                                <h3>Youtube</h3>
+                                <p>HMJ KIMIA UINAM</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-md-4">
-                        <div class="info-box">
-                            <i class="bi bi-facebook"></i>
-                            <h3>Facebook</h3>
-                            <p>HMJ KIMIA UINAM</p>
-                        </div>
+                        <a href="https://www.facebook.com/kimiauinam" target="_blank">
+                            <div class="info-box">
+                                <i class="bi bi-facebook"></i>
+                                <h3>Facebook</h3>
+                                <p>HMJ KIMIA UINAM</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
 

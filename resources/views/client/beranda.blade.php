@@ -14,7 +14,7 @@
                 <h1 data-aos="fade-up" class="pl-3">HMJ-KIMIA FST UIN ALAUDDIN MAKASSAR</h1>
             </div>
             <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-                <img src="assets/img/kimia.svg" class="img-fluid" alt="">
+                <img src="assets/img/vector.png" class="img-fluid" alt="">
             </div>
         </div>
     </div>
@@ -26,80 +26,6 @@
 @section('main')
 
 <main id="main">
-    <!-- ======= About Section ======= -->
-    {{-- <section id="about" class="about">
-
-        <div class="container" data-aos="fade-up">
-            <div class="row gx-0">
-
-                <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="content">
-                        <h3>Who We Are</h3>
-                        <h2>Expedita voluptas omnis cupiditate totam eveniet nobis sint iste. Dolores est repellat corrupti reprehenderit.</h2>
-                        <p>
-                            Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsum tenetur suscipit voluptatum nam et est corrupti.
-                        </p>
-                        <div class="text-center text-lg-start">
-                            <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                                <span>Read More</span>
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-                    <img src="assets/img/about.jpg" class="img-fluid" alt="">
-                </div>
-
-            </div>
-        </div>
-
-    </section> --}}
-    <!-- End About Section -->
-
-    <!-- ======= Values Section ======= -->
-    {{-- <section id="values" class="values">
-
-        <div class="container" data-aos="fade-up">
-
-            <header class="section-header">
-                <h1 class="text-white">Berita</h1>
-                <hr class="bg-white mx-auto" style="width:150px; height:10px; border-radius: 7px 7px 7px 7px;">
-            </header>
-
-            <div class="row">
-
-                <div class="col-lg-4">
-                    <div class="box" data-aos="fade-up" data-aos-delay="200">
-                        <img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt="">
-                        <h3>Ad cupiditate sed est odio</h3>
-                        <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4 mt-lg-0">
-                    <div class="box" data-aos="fade-up" data-aos-delay="400">
-                        <img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt="">
-                        <h3>Voluptatem voluptatum alias</h3>
-                        <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4 mt-lg-0">
-                    <div class="box" data-aos="fade-up" data-aos-delay="600">
-                        <img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt="">
-                        <h3>Fugit cupiditate alias nobis.</h3>
-                        <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section> --}}
-    <!-- End Values Section -->
 
     <section id="recent-blog-posts" class="values recent-blog-posts">
 
