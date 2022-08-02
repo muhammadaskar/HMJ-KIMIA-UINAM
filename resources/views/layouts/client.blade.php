@@ -169,7 +169,7 @@
                         <p>
                             Universitas Islam Negeri Alauddin Makassar Fakultas Sains dan Teknologi.
                             Gedung Sekretariat Jl. H.M Yasin Limpo No.36 Samata, Kabupaten Gowa.<br>
-                            <strong>Telp:</strong> +62 821-9219-8219 <br>
+                            <strong>Telp:</strong> +62821-9251-5911 <br>
                             <strong>Email:</strong> hmjkimiauinam01@gmail.com<br>
                         </p>
 
