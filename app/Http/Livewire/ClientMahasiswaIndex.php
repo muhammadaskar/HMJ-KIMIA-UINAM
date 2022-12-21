@@ -17,7 +17,7 @@ class ClientMahasiswaIndex extends Component
     public function render()
     {
         return view('livewire.client-mahasiswa-index', [
-            'mahasiswas' => $this->cari === null ? Mahasiswa::where('status', true)->paginate(8) : DB::table('mahasiswas')->where('status', true)->orWhere('nama', 'like', '%' . $this->cari . '%')->orWhere('angkatan', 'like', '%' . $this->cari . '%')->orWhere('asal', 'like', '%' . $this->cari . '%')->paginate(8),
+            'mahasiswas' => $this->cari === null ? Mahasiswa::paginate(8) : DB::table('mahasiswas')->where('nama', 'like', '%' . $this->cari . '%')->orWhere('angkatan', 'like', '%' . $this->cari . '%')->orWhere('asal', 'like', '%' . $this->cari . '%')->paginate(8),
         ]);
     }
 }
