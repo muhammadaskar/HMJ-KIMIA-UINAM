@@ -68,7 +68,7 @@ class MainController extends Controller
         if ($tahun == '2021') {
             $data['tahun'] = true;
             $data['penguruses'] = DB::table('penguruses')->where('divisi', $slug)->get();
-        } else {
+        }else {
             $data['tahun'] = false;
             $data['tahunPeriode'] = $tahun;
             $divisi = DB::table('new_penguruses')->where('divisi', $slug)->get();
@@ -76,9 +76,7 @@ class MainController extends Controller
             if ($divisi == '[]') {
                 $data['penguruses'] = DB::table('new_penguruses')->where('divisi', $slug)->where('tahun_periode', $tahun)->get();
             } else {
-                if ($divisi[0]->divisi == $slug && $divisi[0]->tahun_periode == $tahun) {
                     $data['penguruses'] = DB::table('new_penguruses')->where('divisi', $slug)->where('tahun_periode', $tahun)->get();
-                }
             }
         }
 
@@ -141,15 +139,15 @@ class MainController extends Controller
 
     public function postTambahDataMahasiswa(Request $request)
     {
-        $request->validate([
-            'nama' => 'required|min:5',
-            'tempat_lahir' => 'required|min:5',
-            'tahun' => 'required',
-            'bulan' => 'required',
-            'tanggal' => 'required',
-            'angkatan' => 'required',
-            'asal' => 'required',
-        ]);
+        // $request->validate([
+        //     'nama' => 'required|min:5',
+        //     'tempat_lahir' => 'required|min:5',
+        //     'tahun' => 'required',
+        //     'bulan' => 'required',
+        //     'tanggal' => 'required',
+        //     'angkatan' => 'required',
+        //     'asal' => 'required',
+        // ]);
 
 
         $mahasiswa = new Mahasiswa();

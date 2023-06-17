@@ -52,6 +52,14 @@
         </div>
         @else
         {{-- KETUA UMUM ATAU KORDINATOR --}}
+        @if($penguruses == '[]')
+        <div class="col-md-6 mx-auto d-block">
+            <div class="alert alert-danger text-center">
+                <img src="{{ asset('assets/img/hero-img.png') }}" class="img-fluid" style="max-width: 50%;">
+                <h3>data tidak tersedia</h3>
+            </div>
+        </div>
+        @else
         @foreach ($penguruses as $pengurus)
         @if($pengurus->jabatan == 'Ketua Umum' || $pengurus->jabatan == 'Koordinator')
         <div class="row mt-2 gy-4" data-aos="fade-left">
@@ -80,6 +88,7 @@
             @endforeach
 
         </div>
+        @endif
         @endif
     </div>
 

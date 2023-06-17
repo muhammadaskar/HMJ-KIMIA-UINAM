@@ -64,7 +64,7 @@
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto @if($page == 'galeri') active @endif" href=" {{ route('galeri') }} ">Galeri</a></li>
-                    <li><a class="nav-link scrollto @if($page == 'mahasiswa') active @endif" href=" {{ route('mahasiswa') }} ">Mahasiswa</a></li>
+                    <li><a class="nav-link scrollto @if($page == 'mahasiswa') active @endif" href=" {{ route('mahasiswa') }} ">Database</a></li>
                     {{-- <li><a class="nav-link scrollto" href="#about">About</a></li> --}}
                     {{-- <li><a class="nav-link scrollto" href="#services">Services</a></li> --}}
                     {{-- <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li> --}}
