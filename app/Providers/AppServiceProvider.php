@@ -15,9 +15,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('path.public', function() {
-        return base_path('public_html');
-        });
+        if (request()->getHost() == 'development.hmjkimiauinalauddinmakassar.com'){
+            $this->app->bind('path.public', function() {
+                return base_path('/../public_html/development.hmjkimiauinalauddinmakassar.com');
+            });
+        } else{
+            $this->app->bind('path.public', function() {
+                return base_path('public_html');
+            });
+        }
     }
 
     /**
@@ -29,5 +35,11 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(199);
         // Blade::withoutDoubleEncoding();
+        // if (request()->getHost() == 'development.hmjkimiauinalauddinmakassar.com'){
+        //     // $path = '/../public_html/development.hmjkimiauinalauddinmakassar.com';
+        // } else{
+        //     // $path = 'public_html';
+        //     echo request()->getHost();
+        // }
     }
 }
