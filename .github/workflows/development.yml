@@ -3,10 +3,10 @@ name: 🚀 Deploy website on push
 on: 
     push:
         branches:
-            - main
+            - development
 jobs:
   web-deploy:
-    name: 🎉 FTP-Deploy-Production
+    name: 🎉 FTP-Deploy-To-Development
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
@@ -15,8 +15,8 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ${{ secrets.FTP_SERVER_PROD }}
-        username: ${{ secrets.FTP_USERNAME_PROD }}
-        password: ${{ secrets.FTP_PASSWORD_PROD }}
+        server: ${{ secrets.FTP_SERVER_DEV }}
+        username: ${{ secrets.FTP_USERNAME_DEV }}
+        password: ${{ secrets.FTP_PASSWORD_DEV }}
 
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/development'

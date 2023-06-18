@@ -993,9 +993,6 @@
     </section> --}}
     <!-- End Contact Section -->
 
-    <script>
-        console.log('test')
-    </script>
 </main>
 @endsection
 <!-- End #main -->
