@@ -1,5 +1,5 @@
 
-name: 🚀 Deploy to environment development
+name: 🚀 Deploy to environment production
 on: 
     push:
         branches:
